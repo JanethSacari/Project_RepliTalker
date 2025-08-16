@@ -1,15 +1,85 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+##############
+# ANDROID / ANDROID STUDIO
+##############
+
+# Build
+/build/
+*/build/
+.gradle/
 local.properties
+
+# Cache
+.cxx/
+captures/
+
+# APK / bundles
+*.apk
+*.ap_
+*.aab
+
+# Keystore
+*.jks
+*.keystore
+
+##############
+# JAVA / SPRING BOOT (BACKEND)
+##############
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
+
+# Maven
+target/
+*.log
+
+# Class and Artifact
+*.class
+*.war
+*.ear
+*.jar
+
+##############
+# IDEs
+##############
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VSCode
+.vscode/
+
+##############
+# System
+##############
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+##############
+# GENERAL
+##############
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
