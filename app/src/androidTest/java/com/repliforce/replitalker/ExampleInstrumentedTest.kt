@@ -1,4 +1,4 @@
-package com.example.replitalker
+package com.repliforce.replitalker
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

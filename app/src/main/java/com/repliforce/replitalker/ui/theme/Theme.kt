@@ -1,6 +1,5 @@
-package com.example.replitalker.ui.theme
+package com.repliforce.replitalker.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

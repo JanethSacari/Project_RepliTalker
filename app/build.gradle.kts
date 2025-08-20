@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.replitalker"
+    namespace = "com.repliforce.replitalker"
     compileSdk = 35
 
     defaultConfig {

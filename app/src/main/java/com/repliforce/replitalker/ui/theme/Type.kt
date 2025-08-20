@@ -1,4 +1,4 @@
-package com.example.replitalker.ui.theme
+package com.repliforce.replitalker.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

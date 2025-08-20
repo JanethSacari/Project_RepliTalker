@@ -1,4 +1,4 @@
-package com.example.replitalker
+package com.repliforce.replitalker
 
 import org.junit.Test
 
