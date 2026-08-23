@@ -58,7 +58,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
     //Firebase
     implementation(platform("com.google.firebase:firebase-bom:34.18.0"))
     implementation("com.google.firebase:firebase-analytics")
+
+    implementation("com.google.firebase:firebase-auth:24.2.0")
+    implementation("com.google.firebase:firebase-firestore:26.5.0")
+    implementation("com.google.firebase:firebase-storage:22.0.1")
+
+    implementation("com.android.support:support-v4:28.0.0")
 }
