@@ -16,6 +16,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        multiDexEnabled = true
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -68,4 +70,5 @@ dependencies {
     implementation("com.google.firebase:firebase-storage:22.0.1")
 
     implementation("com.android.support:support-v4:28.0.0")
+    implementation("com.android.support:multidex:1.0.3")
 }
