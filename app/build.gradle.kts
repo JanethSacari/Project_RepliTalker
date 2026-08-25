@@ -69,6 +69,9 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore:26.5.0")
     implementation("com.google.firebase:firebase-storage:22.0.1")
 
+    implementation("com.android.support:design:28.0.0")
     implementation("com.android.support:support-v4:28.0.0")
     implementation("com.android.support:multidex:1.0.3")
+    implementation("com.github.bumptech.glide:glide:4.8.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.8.0")
 }
