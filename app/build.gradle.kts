@@ -10,7 +10,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.replitalker"
+        applicationId = "com.repliforce.replitalker"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -43,7 +43,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -74,4 +73,6 @@ dependencies {
     implementation("com.android.support:multidex:1.0.3")
     implementation("com.github.bumptech.glide:glide:4.8.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.8.0")
+    implementation("com.android.support:appcompat-v7:28.0.0")
+    implementation("com.android.support.constraint:constraint-layout:1.1.3")
 }
