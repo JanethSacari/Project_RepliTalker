@@ -59,7 +59,7 @@
             <Button
                 android:id="@+id/buttonLogin"
                 android:layout_width="@dimen/standard_width"
-                android:layout_height="@dimen/standard_width"
+                android:layout_height="@dimen/standard_height"
                 android:layout_below="@+id/passwordTIL"
                 android:layout_centerHorizontal="true"
                 android:text="@string/button_login">
