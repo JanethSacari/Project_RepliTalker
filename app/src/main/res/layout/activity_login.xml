@@ -62,8 +62,21 @@
                 android:layout_height="@dimen/standard_height"
                 android:layout_below="@+id/passwordTIL"
                 android:layout_centerHorizontal="true"
-                android:text="@string/button_login">
+                style="@style/StandardButton"
+                android:text="@string/button_login"
+                android:layout_margin="@dimen/grid_2x">
             </Button>
+            <TextView
+                android:id="@+id/signupTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttonLogin"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/grid_2x"
+                android:clickable="true"
+                style="@style/LinkText"
+                android:text="@string/text_signup">
+            </TextView>
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 
