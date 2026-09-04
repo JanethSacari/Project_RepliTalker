@@ -61,18 +61,15 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //Firebase
-    implementation(platform("com.google.firebase:firebase-bom:34.18.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-storage")
 
-    implementation("com.google.firebase:firebase-auth:24.2.0")
-    implementation("com.google.firebase:firebase-firestore:26.5.0")
-    implementation("com.google.firebase:firebase-storage:22.0.1")
-
-    implementation("com.android.support:design:28.0.0")
-    implementation("com.android.support:support-v4:28.0.0")
-    implementation("com.android.support:multidex:1.0.3")
-    implementation("com.github.bumptech.glide:glide:4.8.0")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.8.0")
-    implementation("com.android.support:appcompat-v7:28.0.0")
-    implementation("com.android.support.constraint:constraint-layout:1.1.3")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
+    implementation("androidx.multidex:multidex:2.0.1")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 }
