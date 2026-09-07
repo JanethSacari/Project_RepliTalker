@@ -1,9 +1,13 @@
 package com.repliforce.replitalker
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.repliforce.replitalker.databinding.ActivityLoginBinding
 
@@ -12,7 +16,10 @@ class LoginActivity : AppCompatActivity() {
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val firebaseAuthListener = FirebaseAuth.AuthStateListener {
         val user = firebaseAuth.currentUser?.uid
-        user?.let {}
+        user?.let {
+            startActivity(HomeActivity.newIntent(this))
+            finish()
+        }
     }
     private lateinit var binding: ActivityLoginBinding
 
@@ -20,6 +27,24 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setTextChangeListener(binding.emailET, binding.emailTIL)
+        setTextChangeListener(binding.passwordET, binding.passwordTIL)
+        binding.loginProgressLayout.setOnTouchListener { view, event -> true }
+    }
+
+    fun setTextChangeListener(et: EditText, til: TextInputLayout) {
+        et.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                til.isErrorEnabled = false
+            }
+        })
     }
 
     fun onLogin(v: View) {
@@ -56,4 +81,14 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     fun goToSignup(v: View) {}
+
+    override fun onStart() {
+        super.onStart()
+        firebaseAuth.addAuthStateListener(firebaseAuthListener)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        firebaseAuth.removeAuthStateListener(firebaseAuthListener)
+    }
 }
