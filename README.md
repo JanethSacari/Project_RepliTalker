@@ -1,21 +1,35 @@
 # RepliTalker
 
-Aplicativo de conversas e chat desenvolvido exclusivamente para a comunicação entre integrantes da **Repliforce**.
+A dedicated chat and communication application developed exclusively for **Repliforce** members.
 
-## 🚀 Sobre o Projeto
-O RepliTalker é uma plataforma de comunicação em tempo real que visa facilitar a interação e troca de informações dentro da organização Repliforce, garantindo um ambiente seguro e eficiente.
+## 🚀 About the Project
+RepliTalker is a real-time communication platform designed to facilitate interaction and information exchange within the Repliforce organization, ensuring a secure and efficient environment for all members.
 
-## 🛠️ Tecnologias Utilizadas
-- **Linguagem:** Kotlin
-- **Interface:** Jetpack Compose e XML Layouts (AndroidX)
-- **Backend:** Firebase Core (Auth, Firestore, Storage)
+## ✨ Latest Features
+- **User Authentication:** Secure login system powered by Firebase Authentication (Email/Password).
+- **Home Screen:** A dedicated landing area for authenticated users.
+- **Modern UI:** Built using Material Design 3 and AndroidX components.
+- **View Binding:** Implemented for safe and efficient UI interactions.
 
-## ⚙️ Configuração Necessária
-Este projeto foi migrado para **AndroidX**.
-Este projeto utiliza os serviços do Firebase para autenticação e banco de dados. Para executá-lo corretamente:
+## 🛠️ Tech Stack
+- **Language:** Kotlin
+- **UI Architecture:** XML Layouts (AndroidX) & Jetpack Compose integration.
+- **Backend:** Firebase (Authentication, Firestore, Storage).
+- **Gradle:** Version Catalog implementation for dependency management.
+- **Compatibility:** Optimized for Android SDK 35.
 
-1. Crie um projeto no [Firebase Console](https://console.firebase.com/).
-2. Adicione um aplicativo Android ao projeto com o ID do pacote `com.repliforce.replitalker`.
-3. Baixe o arquivo `google-services.json` fornecido pelo Firebase.
-4. Mova o arquivo para o diretório `app/` do projeto.
-5. Certifique-se de configurar o **Firebase Authentication** e o **Cloud Firestore** no console.
+## ⚙️ Required Setup
+This project requires Firebase services to handle authentication and data. To run it locally:
+
+1. Create a new project in the [Firebase Console](https://console.firebase.com/).
+2. Add an Android app to your Firebase project using the package name `com.repliforce.replitalker`.
+3. Download the `google-services.json` file provided by Firebase.
+4. Move the file into the `app/` directory of this project.
+5. Enable **Email/Password** sign-in method in the Firebase Authentication console.
+6. (Optional) Configure **Cloud Firestore** and **Firebase Storage** if you plan to extend chat capabilities.
+
+## 📸 Screenshots
+*(Coming soon)*
+
+---
+*Developed as part of the Repliforce digital infrastructure.*
