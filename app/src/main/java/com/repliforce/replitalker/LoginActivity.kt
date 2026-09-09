@@ -1,5 +1,7 @@
 package com.repliforce.replitalker
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -90,5 +92,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         firebaseAuth.removeAuthStateListener(firebaseAuthListener)
+    }
+
+    companion object {
+        fun newIntent(context: Context) = Intent(context, LoginActivity::class.java)
     }
 }

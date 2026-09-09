@@ -24,6 +24,8 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
     </application>
 
