@@ -8,6 +8,7 @@ RepliTalker is a real-time communication platform designed to facilitate interac
 ## ✨ Latest Features
 - **User Authentication:** Secure login system powered by Firebase Authentication (Email/Password).
 - **Home Screen:** A dedicated landing area for authenticated users.
+- **Logout Functionality:** Integrated secure sign-out process using Firebase Auth.
 - **Modern UI:** Built using Material Design 3 and AndroidX components.
 - **View Binding:** Implemented for safe and efficient UI interactions.
 
