@@ -82,7 +82,10 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-    fun goToSignup(v: View) {}
+    fun goToSignup(v: View) {
+        startActivity(SignupActivity.newIntent(this))
+        finish()
+    }
 
     override fun onStart() {
         super.onStart()
