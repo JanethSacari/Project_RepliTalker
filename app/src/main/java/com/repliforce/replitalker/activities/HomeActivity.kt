@@ -1,4 +1,4 @@
-package com.repliforce.replitalker
+package com.repliforce.replitalker.activities
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.repliforce.replitalker.R
 
 class HomeActivity : AppCompatActivity() {
     private val firebaseAuth = FirebaseAuth.getInstance()

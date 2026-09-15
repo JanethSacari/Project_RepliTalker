@@ -1,4 +1,4 @@
-package com.repliforce.replitalker
+package com.repliforce.replitalker.activities
 
 import android.content.Context
 import android.content.Intent
@@ -11,14 +11,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.repliforce.replitalker.databinding.ActivitySignupBinding
-import com.repliforce.replitalker.util.DATA_USERS
-import com.repliforce.replitalker.util.User
+import com.repliforce.replitalker.databinding.ActivityLoginBinding
 
-class SignupActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
-    private val firebaseDB = FirebaseFirestore.getInstance()
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val firebaseAuthListener = FirebaseAuth.AuthStateListener {
         val user = firebaseAuth.currentUser?.uid
@@ -27,19 +23,16 @@ class SignupActivity : AppCompatActivity() {
             finish()
         }
     }
-
-    private lateinit var binding: ActivitySignupBinding
+    private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignupBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setTextChangeListener(binding.usernameET, binding.usernameTIL)
         setTextChangeListener(binding.emailET, binding.emailTIL)
         setTextChangeListener(binding.passwordET, binding.passwordTIL)
-
-        binding.signupProgressLayout.setOnTouchListener { view, event -> true }
+        binding.loginProgressLayout.setOnTouchListener { view, event -> true }
     }
 
     fun setTextChangeListener(et: EditText, til: TextInputLayout) {
@@ -56,13 +49,8 @@ class SignupActivity : AppCompatActivity() {
         })
     }
 
-    fun onSignup(v: View) {
+    fun onLogin(v: View) {
         var proceed = true
-        if(binding.usernameET.text.isNullOrEmpty()) {
-            binding.usernameTIL.error = "Username is required"
-            binding.usernameTIL.isErrorEnabled = true
-            proceed = false
-        }
         if (binding.emailET.text.isNullOrEmpty()) {
             binding.emailTIL.error = "Email is required"
             binding.emailTIL.isErrorEnabled = true
@@ -74,42 +62,28 @@ class SignupActivity : AppCompatActivity() {
             proceed = false
         }
         if (proceed) {
-            binding.signupProgressLayout.visibility = View.VISIBLE
-            firebaseAuth.createUserWithEmailAndPassword(
+            binding.loginProgressLayout.visibility = View.VISIBLE
+            firebaseAuth.signInWithEmailAndPassword(
                 binding.emailET.text.toString(),
                 binding.passwordET.text.toString()
             ).addOnCompleteListener() {
-                    task ->
+                task ->
                 if (!task.isSuccessful) {
-                    binding.signupProgressLayout.visibility = View.GONE
+                    binding.loginProgressLayout.visibility = View.GONE
                     Toast.makeText(
-                        this@SignupActivity,
-                        "Signup Error: ${task.exception?.localizedMessage}",
+                        this@LoginActivity,
+                        "Login Error: ${task.exception?.localizedMessage}",
                         Toast.LENGTH_SHORT).show()
-                } else {
-                    val email = binding.emailET.text.toString()
-                    val name = binding.usernameET.text.toString()
-                    val user = User(
-                        email,
-                        name,
-                        "",
-                        arrayListOf(),
-                        arrayListOf()
-                    )
-                    firebaseDB.collection(DATA_USERS)
-                        .document(firebaseAuth.uid!!).set(user)
                 }
-                binding.signupProgressLayout.visibility = View.GONE
             }
-                .addOnFailureListener { e ->
-                    e.printStackTrace()
-                    binding.signupProgressLayout.visibility = View.GONE
-                }
+            .addOnFailureListener { e ->
+                e.printStackTrace()
+                binding.loginProgressLayout.visibility = View.GONE
+            }
         }
     }
-
-    fun goToLogin(v: View) {
-        startActivity(LoginActivity.newIntent(this))
+    fun goToSignup(v: View) {
+        startActivity(SignupActivity.newIntent(this))
         finish()
     }
 
@@ -124,6 +98,6 @@ class SignupActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun newIntent(context: Context) = Intent(context, SignupActivity::class.java)
+        fun newIntent(context: Context) = Intent(context, LoginActivity::class.java)
     }
 }
