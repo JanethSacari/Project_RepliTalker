@@ -62,11 +62,54 @@
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/standard_height"
+        android:layout_marginBottom="@dimen/grid_2x"
+        app:tabIndicator="@null"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/selector_home"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/selector_search"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabMyActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/selector_myactivity"/>
+    </com.google.android.material.tabs.TabLayout>
+
     <Button
         android:id="@+id/logoutButtton"
         android:layout_width="@dimen/standard_width"
         android:layout_height="@dimen/standard_height"
         android:onClick="onLogout"
         android:text="Logout"/>
+
+    <LinearLayout
+        android:id="@+id/homeProgressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:elevation="5dp"
+        android:background="@color/transparent_grey"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
