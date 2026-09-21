@@ -5,20 +5,45 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.repliforce.replitalker.R
+import com.repliforce.replitalker.fragments.HomeFragment
+import com.repliforce.replitalker.fragments.MyActivityFragment
+import com.repliforce.replitalker.fragments.SearchFragment
 
 class HomeActivity : AppCompatActivity() {
     private val firebaseAuth = FirebaseAuth.getInstance()
+    private var sectionsPagerAdapters: SectionPageAdapter? = null
+    private val homeFragment = HomeFragment()
+    private val searchFragment = SearchFragment()
+    private val myActivityFragment = MyActivityFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        sectionsPagerAdapters = SectionPageAdapter(supportFragmentManager)
+
     }
 
     fun onLogout(v: View) {
         firebaseAuth.signOut()
         startActivity(LoginActivity.newIntent(this))
         finish()
+    }
+
+    inner class SectionPageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+        override fun getItem(position: Int): Fragment {
+            return when(position) {
+                0 -> homeFragment
+                1 -> searchFragment
+                else -> myActivityFragment
+            }
+        }
+
+        override fun getCount() = 3
     }
     companion object {
         fun newIntent(context: Context) = Intent(context, HomeActivity::class.java)
