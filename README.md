@@ -10,7 +10,8 @@ RepliTalker is a real-time communication platform designed to facilitate interac
 - **User Profile Persistence:** Automatic creation of user profiles in **Cloud Firestore** upon registration, including username and metadata.
 - **User Signup:** New member registration system integrated with Firebase Auth and database persistence.
 - **Advanced Home Layout:** Feature-rich home screen with a custom toolbar, user profile logo, and integrated search bar.
-- **Navigation System:** Bottom navigation implementation using `TabLayout` for easy access to Home, Search, and User Activity sections.
+- **Navigation System:** Bottom navigation implementation using `TabLayout` combined with **ViewPager** for smooth screen swiping between Home, Search, and User Activity sections.
+- **Floating Action Button (FAB):** Quick access button with a feather icon, designed for creating new posts or messages.
 - **Home Screen:** A dedicated landing area for authenticated users.
 - **Logout Functionality:** Integrated secure sign-out process using Firebase Auth, accessible directly from the home screen.
 - **Modern UI:** Built using Material Design 3 and AndroidX components.
