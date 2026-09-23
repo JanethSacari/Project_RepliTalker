@@ -10,11 +10,15 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.repliforce.replitalker.R
+import com.repliforce.replitalker.databinding.ActivityHomeBinding
+import com.repliforce.replitalker.databinding.ActivityLoginBinding
 import com.repliforce.replitalker.fragments.HomeFragment
 import com.repliforce.replitalker.fragments.MyActivityFragment
 import com.repliforce.replitalker.fragments.SearchFragment
 
 class HomeActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityHomeBinding
     private val firebaseAuth = FirebaseAuth.getInstance()
     private var sectionsPagerAdapters: SectionPageAdapter? = null
     private val homeFragment = HomeFragment()
@@ -23,9 +27,10 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         sectionsPagerAdapters = SectionPageAdapter(supportFragmentManager)
-
+        binding.container.adapter = sectionsPagerAdapters
     }
 
     fun onLogout(v: View) {
