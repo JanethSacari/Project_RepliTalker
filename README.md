@@ -17,7 +17,7 @@ RepliTalker is a real-time communication platform designed to facilitate interac
 - **Home Screen:** A dedicated landing area for authenticated users.
 - **Logout Functionality:** Integrated secure sign-out process using Firebase Auth, accessible directly from the home screen.
 - **Modern UI:** Built using Material Design 3 and AndroidX components.
-- **View Binding:** Implemented for safe and efficient UI interactions.
+- **View Binding Integration:** Implemented View Binding across key components, including `HomeActivity` and authentication screens, for null-safe and type-safe UI interactions.
 
 ## 🛠️ Tech Stack
 - **Language:** Kotlin
