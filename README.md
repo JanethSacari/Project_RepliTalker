@@ -11,6 +11,7 @@ RepliTalker is a real-time communication platform designed to facilitate interac
 - **User Signup:** New member registration system integrated with Firebase Auth and database persistence.
 - **Advanced Home Layout:** Feature-rich home screen with a custom toolbar, user profile logo, and integrated search bar.
 - **Navigation System:** Bottom navigation implementation using `TabLayout` combined with **ViewPager** for smooth screen swiping between Home, Search, and User Activity sections.
+- **TabLayout & ViewPager Synchronization:** Integrated `TabLayoutOnPageChangeListener` and `ViewPagerOnTabSelectedListener` in `HomeActivity` for bidirectional synchronization between tabs and fragment pages.
 - **Fragment-Based Architecture:** Modular design using `HomeFragment`, `SearchFragment`, and `MyActivityFragment` to handle specific feature logic.
 - **Base Fragment Implementation:** Centralized shared functionality through an abstract `RepliTalkerFragment` class.
 - **Floating Action Button (FAB):** Quick access button with a feather icon, designed for creating new posts or messages.
