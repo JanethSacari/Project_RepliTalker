@@ -25,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
     private val homeFragment = HomeFragment()
     private val searchFragment = SearchFragment()
     private val myActivityFragment = MyActivityFragment()
+    private val userId = FirebaseAuth.getInstance().currentUser?.uid
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +52,14 @@ class HomeActivity : AppCompatActivity() {
         firebaseAuth.signOut()
         startActivity(LoginActivity.newIntent(this))
         finish()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if(userId == null) {
+            startActivity(LoginActivity.newIntent(this))
+            finish()
+        }
     }
 
     inner class SectionPageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
