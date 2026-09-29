@@ -44,8 +44,11 @@ class HomeActivity : AppCompatActivity() {
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
-
         })
+
+        binding.logo.setOnClickListener { view ->
+            startActivity(ProfileActivity.newIntent(this))
+        }
     }
 
     fun onLogout(v: View) {
