@@ -15,7 +15,7 @@ RepliTalker is a real-time communication platform designed to facilitate interac
 - **Fragment-Based Architecture:** Modular design using `HomeFragment`, `SearchFragment`, and `MyActivityFragment` to handle specific feature logic.
 - **Base Fragment Implementation:** Centralized shared functionality through an abstract `RepliTalkerFragment` class.
 - **Floating Action Button (FAB):** Quick access button with a feather icon, designed for creating new posts or messages.
-- **Home Screen:** A dedicated landing area for authenticated users.
+- **Home Screen:** A dedicated landing area for authenticated users with session validation in `onResume` to redirect unauthenticated users (`userId == null`) to `LoginActivity`.
 - **Logout Functionality:** Integrated secure sign-out process using Firebase Auth, accessible directly from the home screen.
 - **Modern UI:** Built using Material Design 3 and AndroidX components.
 - **View Binding Integration:** Implemented View Binding across key components, including `HomeActivity` and authentication screens, for null-safe and type-safe UI interactions.
