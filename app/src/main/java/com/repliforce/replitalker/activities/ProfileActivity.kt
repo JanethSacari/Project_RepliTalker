@@ -3,6 +3,7 @@ package com.repliforce.replitalker.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.repliforce.replitalker.R
@@ -13,6 +14,9 @@ class ProfileActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_profile)
     }
+
+    fun onApply(v: View) {}
+    fun onSignout(v: View) {}
 
     companion object {
         fun newIntent(context: Context) = Intent(context, ProfileActivity::class.java)
