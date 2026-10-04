@@ -107,13 +107,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="8dp"/>
 
-    <Button
-        android:id="@+id/logoutButtton"
-        android:layout_width="@dimen/standard_width"
-        android:layout_height="@dimen/standard_height"
-        android:onClick="onLogout"
-        android:text="Logout"/>
-
     <LinearLayout
         android:id="@+id/homeProgressLayout"
         android:layout_width="match_parent"
