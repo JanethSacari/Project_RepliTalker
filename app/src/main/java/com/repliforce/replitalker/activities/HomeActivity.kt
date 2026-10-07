@@ -51,12 +51,6 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    fun onLogout(v: View) {
-        firebaseAuth.signOut()
-        startActivity(LoginActivity.newIntent(this))
-        finish()
-    }
-
     override fun onResume() {
         super.onResume()
         if(userId == null) {
