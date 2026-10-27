@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -13,6 +14,8 @@ import com.repliforce.replitalker.R
 import com.repliforce.replitalker.databinding.ActivityHomeBinding
 import com.repliforce.replitalker.databinding.ActivityProfileBinding
 import com.repliforce.replitalker.util.DATA_USERS
+import com.repliforce.replitalker.util.DATA_USER_EMAIL
+import com.repliforce.replitalker.util.DATA_USER_USERNAME
 import com.repliforce.replitalker.util.User
 
 class ProfileActivity : AppCompatActivity() {
@@ -46,7 +49,25 @@ class ProfileActivity : AppCompatActivity() {
                 finish()
             }
     }
-    fun onApply(v: View) {}
+    fun onApply(v: View) {
+        binding.profileProgressLayout.visibility = View.VISIBLE
+        val username = binding.usernameET.text.toString()
+        val email = binding.emailET.text.toString()
+        val map = HashMap<String, Any>()
+        map[DATA_USER_USERNAME] = username
+        map[DATA_USER_EMAIL] = email
+        firebaseDB.collection(DATA_USERS).document(userId!!)
+            .update(map).addOnSuccessListener {
+                Toast.makeText(this, "Update successful", Toast.LENGTH_SHORT)
+                    .show()
+                finish()
+            }
+            .addOnFailureListener { e ->
+                e.printStackTrace()
+                Toast.makeText(this, "Update failed. Please try again.", Toast.LENGTH_SHORT)
+                binding.profileProgressLayout.visibility = View.GONE
+            }
+    }
     fun onSignout(v: View) {
         firebaseAuth.signOut()
         finish()
