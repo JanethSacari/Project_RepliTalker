@@ -6,13 +6,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.repliforce.replitalker.R
-import com.repliforce.replitalker.databinding.ActivityHomeBinding
 import com.repliforce.replitalker.databinding.ActivityProfileBinding
 import com.repliforce.replitalker.util.DATA_USERS
 import com.repliforce.replitalker.util.DATA_USER_EMAIL

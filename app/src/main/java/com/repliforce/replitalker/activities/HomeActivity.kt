@@ -3,16 +3,13 @@ package com.repliforce.replitalker.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.repliforce.replitalker.R
 import com.repliforce.replitalker.databinding.ActivityHomeBinding
-import com.repliforce.replitalker.databinding.ActivityLoginBinding
 import com.repliforce.replitalker.fragments.HomeFragment
 import com.repliforce.replitalker.fragments.MyActivityFragment
 import com.repliforce.replitalker.fragments.SearchFragment
