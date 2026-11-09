@@ -16,7 +16,8 @@ RepliTalker is a real-time communication platform designed to facilitate interac
 - **Base Fragment Implementation:** Centralized shared functionality through an abstract `RepliTalkerFragment` class.
 - **Floating Action Button (FAB):** Quick access button with a feather icon, designed for creating new posts or messages.
 - **Home Screen:** A dedicated landing area for authenticated users with dynamic session validation in `onResume` to automatically redirect logged-out users to `LoginActivity`.
-- **User Profile Management & Navigation:** Fully-featured `ProfileActivity` using View Binding. Includes automatic user info retrieval (`populateInfo()`) from Firestore, profile updating (`onApply()`), sign-out handling (`onSignout()`), and progress overlays.
+- **User Profile Management & Navigation:** Fully-featured `ProfileActivity` using View Binding. Includes automatic user info retrieval (`populateInfo()`) from Firestore, profile updating (`onApply()`), sign-out handling (`onSignout()`), `FirebaseStorage` integration for profile images, and progress overlays.
+- **Image Loading & Utilities:** Added Kotlin extension utilities (`Util.kt`) for asynchronous image loading via **Glide**, featuring customized `CircularProgressDrawable` placeholders and error fallback handling.
 - **Refactored Sign-Out Flow:** Centralized sign-out functionality within `ProfileActivity`, removing legacy logout buttons from the home screen layout for a cleaner UX.
 - **Modern UI:** Built using Material Design 3 and AndroidX components.
 - **View Binding Integration:** Implemented View Binding across key components, including `HomeActivity` and authentication screens, for null-safe and type-safe UI interactions.
